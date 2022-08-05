@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="multiselect" translate="label" sortOrder="10">
+            <label>Multi select tab</label>
+        </tab>
+        <section id="multiselect_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Multi select section</label>
+            <tab>multiselect</tab>
+            <resource>Perspective_FirstTask::multiselect_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Multi Select Group</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="multiselect_field" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Multi Select Field</label>
+                    <source_model>Perspective\FirstTask\Model\Config\Source\Category</source_model>
+                </field>
+                <field id="date" translate="label" type="date" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sale completion date</label>
+                    <frontend_model>Perspective\FirstTask\Block\Adminhtml\System\Config\Date</frontend_model>
+                </field>
+                <field id="days" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Days before the end of sales </label>
+                </field>
+            </group>
+        </section>
+        <tab id="cron" translate="label" sortOrder="10">
+            <label>Cron</label>
+        </tab>
+        <section id="cron_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Cron section</label>
+            <tab>cron</tab>
+            <resource>Perspective_FirstTask::cron_config</resource>
+            <group id="general_cron" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Cron</label>
+            <field id="enable_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cron Enable</label>
+            </field>
+            <field id="enable_discount" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Discount Enable</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="discount_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Discount</label>
+            </field>
+            </group>
+        </section>
+    </system>
+</config>

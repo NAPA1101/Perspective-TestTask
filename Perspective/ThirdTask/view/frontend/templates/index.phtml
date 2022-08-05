@@ -1,0 +1,24 @@
+<h2>
+<div id="getting-started"></div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'countdown'
+    ], function(
+        $, countdown
+    ) {
+        jQuery("#getting-started")
+            .countdown("<?php echo min($block->getSpecialDate(), $block->getRuleDate(2), $block->getRuleDate(3))?>", function(event) {
+                jQuery(this).text(
+                    event.strftime('%D Days %H:%M:%S')
+                );
+            });
+    });
+</script></h2>
+
+<?php
+if($block->getSpecialEnable()) echo 'Special Price: ' . $block->getSpecialDate() . '<br>';
+if($block->getRuleEnable()[0]) echo 'RulePrice1: ' . $block->getRuleDate(2) . '<br>';
+if($block->getRuleEnable()[1]) echo 'RulePrice2: ' . $block->getRuleDate(3) . '<br>';
+if($block->getComparison()) echo 'Min: ' . min($block->getSpecialDate(), $block->getRuleDate(2), $block->getRuleDate(3)) . '<br>';
+

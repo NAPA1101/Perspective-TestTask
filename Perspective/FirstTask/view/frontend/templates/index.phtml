@@ -1,0 +1,16 @@
+<?php
+if ($block->getEnableModule()) {
+    if ($block->getCurrentDate() >= $block->getDiscount()) {
+        echo "Продажа данного товара заканчивается: " . $block->getDiscountDate() . "<br>";
+    }
+}
+
+if ($block->getCron() && $block->getSaleEnabled() && $block->getCustomGroup() == 4) {
+    echo "<b>С 8 до 10 дня пенсионерам скидка 15%! </b><br>";
+}
+
+
+
+
+
+
